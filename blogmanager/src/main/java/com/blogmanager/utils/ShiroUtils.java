@@ -1,6 +1,6 @@
 package com.blogmanager.utils;
 
-import com.blogmanager.model.pojo.UserDO;
+import com.common.entity.User;
 import com.common.utils.DBException;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
@@ -19,15 +19,15 @@ public class ShiroUtils {
     public static Subject getSubjct() {
         return SecurityUtils.getSubject();
     }
-    public static UserDO getUser() {
+    public static User getUser() {
         Object object = getSubjct().getPrincipal();
-        return (UserDO)object;
+        return (User)object;
     }
-    public static Long getUserId() {
-        return getUser().getId();
+    public static String getUserId() {
+        return getUser().getUserId();
     }
     /**
-     * 获取：帐号，SIH用户中心账号，或注册账号，唯一性验证
+     * 获取
      * @return
      */
     public static String getUserCode() {
@@ -44,13 +44,11 @@ public class ShiroUtils {
     public static String getUserName() {
     	return getUser().getUserName()==null?getUser().getUserId():getUser().getUserName();
     }
+
+    /**
+     * 退出登录
+     */
     public static void logout() {
         getSubjct().logout();
-    }
-
-    public static List<Principal> getPrinciples() {
-        List<Principal> principals = null;
-        Collection<Session> sessions = sessionDAO.getActiveSessions();
-        return principals;
     }
 }
