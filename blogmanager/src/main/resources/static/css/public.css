@@ -1,0 +1,23 @@
+body{background-color: #fff;}
+.wrapper .bootstrap-table .table thead{background-color: #39aef5;color: #fff;}
+.slimScrollDiv{border:1px solid #eee; background-color: #fff;}
+.skin-1 .nav>li.active {background-color: #fff;}
+.skin-1 .nav>li.active>a {color: #39aef5;}
+
+@media (min-width: 768px) {
+	.col-sm-0 {
+		width: auto;
+		float: left;
+		position: relative;
+	    min-height: 1px;
+	    padding-right: 15px;
+	    padding-left: 15px;
+	}
+}
+.form-control, .single-line{display: block;padding-left: 8px;padding-right: 20px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;height: 28px;border-radius: 5px;}
+.fixed-table-toolbar .bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 28px;
+}
